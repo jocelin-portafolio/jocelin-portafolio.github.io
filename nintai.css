@@ -2,7 +2,7 @@
 .hero__grid { display: grid; grid-template-columns: 1.4fr .8fr; gap: 56px; align-items: center; }
 .portrait { margin: 0; position: relative; }
 .portrait img {
-  width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 30%;
+  width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 40%;
   border-radius: 24px; box-shadow: var(--shadow); filter: grayscale(1) contrast(1.05);
 }
 .portrait figcaption {
@@ -141,7 +141,7 @@
 .impact li strong { display: block; color: var(--n-mint); font: 500 12px var(--mono); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 6px; }
 
 .founder { display: grid; grid-template-columns: 140px 1fr; gap: 28px; align-items: center; margin-top: 20px; padding: 24px; }
-.founder img { width: 140px; height: 140px; object-fit: cover; object-position: 50% 28%; border-radius: 50%; filter: grayscale(1); }
+.founder img { width: 140px; height: 140px; object-fit: cover; border-radius: 50%; }
 .founder p:last-child { color: var(--n-ink-2); }
 
 /* Responsive */
