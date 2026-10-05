@@ -190,3 +190,6 @@
 .portrait figcaption { left: auto; right: -14px; bottom: -18px; }
 @media (max-width: 1000px) { .portrait { width: 250px; } }
 @media (max-width: 860px) { .hero__grid { grid-template-columns: 1fr; gap: 40px; } .portrait { width: 200px; justify-self: start; order: -1; } .portrait figcaption { right: auto; left: 110px; bottom: -14px; white-space: nowrap; } }
+
+.mvp-live { margin: 18px 0 0; padding: 12px 14px; border-radius: 12px; background: rgb(140 245 154 / .08); border: 1px solid var(--n-mint-3); font-size: 14.5px; color: var(--n-ink-2); display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.mvp-live a { color: var(--n-mint); font-weight: 600; }
