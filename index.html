@@ -15,6 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="nintai.css">
+  <link rel="stylesheet" href="platwave.css">
   <script>
     try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
   </script>
@@ -71,7 +72,7 @@
       </div>
       <dl class="hero__facts">
         <div><dt>NINTAI</dt><dd>startup de IA en etapa MVP</dd></div>
-        <div><dt>6</dt><dd>proyectos publicados</dd></div>
+        <div><dt>7</dt><dd>proyectos publicados</dd></div>
         <div><dt>JS · Python</dt><dd>lenguajes principales</dd></div>
         <div><dt>React · Next · MCP</dt><dd>tecnologías clave</dd></div>
       </dl>
@@ -294,6 +295,58 @@
         </div>
       </article>
 
+      <article class="featured featured--pro reveal" id="platwave">
+        <div class="featured__body">
+          <span class="badge badge--pro">Experiencia profesional · PlatWave</span>
+          <h3>IA para licitaciones</h3>
+          <p class="featured__lead">
+            Plataforma que lee bases de licitación, extrae criterios y ponderaciones, responde preguntas sobre el documento y
+            <strong>evalúa ofertas técnicas y económicas</strong> con agentes de IA hasta generar un ranking global.
+            <br><strong>Rol: desarrollo full stack.</strong>
+          </p>
+          <ul class="checks">
+            <li><strong>Tres agentes en LangGraph:</strong> análisis de criterios con ramas en paralelo y bucle por ítem, respuestas <em>retrieve → generate → rewrite</em> y evaluación de ofertas.</li>
+            <li><strong>RAG aislado por licitación:</strong> una colección de ChromaDB por proceso, con ingesta de PDF y Excel.</li>
+            <li><strong>API en FastAPI</strong> con evaluaciones asíncronas (<code>202 Accepted</code> y tareas en segundo plano) sobre PostgreSQL.</li>
+            <li><strong>Frontend en React</strong> con SSO de Keycloak, rutas por rol, evaluaciones y ranking.</li>
+            <li><strong>Observabilidad y QA:</strong> trazas en Langfuse y un set de pruebas para validar las respuestas.</li>
+          </ul>
+          <ul class="tags" aria-label="Tecnologías">
+            <li>Python</li><li>FastAPI</li><li>LangGraph</li><li>LangChain</li><li>ChromaDB</li><li>PostgreSQL</li><li>Langfuse</li><li>React</li><li>Keycloak</li>
+          </ul>
+          <div class="links">
+            <a href="https://github.com/jocelin-portafolio/platwave-licitaciones-ia" target="_blank" rel="noopener" class="link">Ver caso de estudio →</a>
+          </div>
+          <p class="credit">Código propiedad de PlatWave. El caso de estudio documenta la arquitectura y mi participación.</p>
+        </div>
+
+        <div class="terminal graph" role="img" aria-label="Grafo del agente Analyst Team: busca la tabla de puntajes, recorre cada criterio recuperando contexto, sintetiza metodología y extrae puntaje en paralelo, combina y al terminar calcula la ponderación.">
+          <div class="terminal__bar"><span></span><span></span><span></span><p>analyst_team · LangGraph</p></div>
+          <div class="graph__body">
+            <div class="g-node g-start">find_global_scoring_table</div>
+            <div class="g-arrow"></div>
+            <div class="g-loop">
+              <span class="g-loop__label">por cada criterio ↺</span>
+              <div class="g-node">setup_next_item</div>
+              <div class="g-arrow"></div>
+              <div class="g-node g-rag">retrieve_context <small>ChromaDB</small></div>
+              <div class="g-split"><span></span><span></span></div>
+              <div class="g-par">
+                <div class="g-node g-llm">synthesize_methodology</div>
+                <div class="g-node g-llm">extract_scoring</div>
+              </div>
+              <div class="g-join"><span></span><span></span></div>
+              <div class="g-node">combine_results</div>
+            </div>
+            <div class="g-arrow"></div>
+            <div class="g-node g-end">calculate_ponderacion</div>
+          </div>
+          <div class="flow" aria-hidden="true">
+            <span>React</span><i></i><span>FastAPI</span><i></i><span>LangGraph</span><i></i><span>ChromaDB</span><i></i><span>Postgres</span>
+          </div>
+        </div>
+      </article>
+
       <!-- FILTERS -->
       <div class="filters" role="group" aria-label="Filtrar proyectos">
         <button type="button" class="chip is-active" data-filter="todos" aria-pressed="true">Todos</button>
@@ -442,11 +495,11 @@
         </div>
         <div class="stack__group reveal">
           <h3>Backend y datos</h3>
-          <ul class="tags tags--lg"><li>Node.js</li><li>Python</li><li>Django</li><li>REST APIs</li><li>MongoDB</li><li>Mongoose</li><li>MySQL</li><li>SQLite</li><li>Pydantic</li></ul>
+          <ul class="tags tags--lg"><li>Node.js</li><li>Python</li><li>FastAPI</li><li>Django</li><li>REST APIs</li><li>PostgreSQL</li><li>MongoDB</li><li>Mongoose</li><li>MySQL</li><li>SQLite</li><li>Pydantic</li></ul>
         </div>
         <div class="stack__group reveal">
           <h3>IA</h3>
-          <ul class="tags tags--lg"><li>Claude API</li><li>Model Context Protocol</li><li>Tool use</li><li>Evals</li><li>Human-in-the-loop</li></ul>
+          <ul class="tags tags--lg"><li>Claude API</li><li>LangChain</li><li>LangGraph</li><li>RAG</li><li>ChromaDB</li><li>Langfuse</li><li>Model Context Protocol</li><li>Tool use</li><li>Evals</li><li>Human-in-the-loop</li></ul>
         </div>
         <div class="stack__group reveal">
           <h3>Calidad y DevOps</h3>
