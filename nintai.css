@@ -183,3 +183,10 @@
 .mix li span { white-space: nowrap; }
 .nintai__kanji { white-space: nowrap; flex: none; }
 @media (max-width: 520px) { .nintai__brand { flex-direction: column; align-items: flex-start; gap: 14px; } }
+
+/* Retrato compacto: rostro y hombros, sin dominar la portada */
+.hero__grid { grid-template-columns: 1fr auto; gap: 64px; }
+.portrait { width: 300px; justify-self: end; }
+.portrait figcaption { left: auto; right: -14px; bottom: -18px; }
+@media (max-width: 1000px) { .portrait { width: 250px; } }
+@media (max-width: 860px) { .hero__grid { grid-template-columns: 1fr; gap: 40px; } .portrait { width: 200px; justify-self: start; order: -1; } .portrait figcaption { right: auto; left: 110px; bottom: -14px; white-space: nowrap; } }
